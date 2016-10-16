@@ -25,8 +25,7 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(location_params)
-    puts "@location.lat"
-    puts "asdasdasdasda"
+    puts "Estoy adentro D:"
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
@@ -70,6 +69,7 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
+      puts params
       params.require(:location).permit(:lat, :long)
     end
 end
